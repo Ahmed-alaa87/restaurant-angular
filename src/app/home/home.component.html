@@ -1,0 +1,154 @@
+
+<!--  ng serve --proxy-config proxy.conf.json --open
+-->
+<!--spinner Html : true -->
+<div class="text-center" *ngIf="loading">
+  <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+ </div>
+ <!-- end -->
+
+
+<!--  this Section for Spinner  :false -->
+<section *ngIf="!loading">
+
+
+
+<!-- section1 -->
+<section class="w-100 vh-100 overflow-hidden">
+    <div class="container-fluid p-0 h-100">
+      <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+  
+          <div
+  *ngFor="let item of products | slice:60:70; let i = index"
+  class="carousel-item position-relative"
+  [class.active]="i === 0"
+  [attr.data-bs-interval]="i === 0 ? 3000 : 2000"
+  style="height: 100vh;"  
+>
+  <!-- الصورة الخلفية -->
+  <img 
+    [src]="item.imageUrl" 
+    class="w-100 h-100"
+    style="object-fit: cover; object-position: center; filter: brightness(70%);"
+    alt="Background Image">
+
+  <!-- طبقة شفافة فوق الصورة -->
+  <div class="position-absolute top-0 start-0 w-100 h-100" 
+       style="background-color: rgba(0, 0, 0, 0.3); z-index: 1;"></div>
+
+  <!-- النص في وسط الصورة -->
+  <div class="position-absolute top-50 start-50 translate-middle text-white text-center"
+       style="z-index: 2;">
+    <h1 class="display-4 fw-bold">Welcome to Our Restaurant</h1>
+    <p class="lead">Taste the difference</p>
+  </div>
+</div>
+
+  
+        </div>
+  
+        <button class="carousel-control-prev custom-arrow" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+  
+        <button class="carousel-control-next custom-arrow" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+  
+      </div>
+    </div>
+  </section>
+<!-- end1 -->
+
+
+<!-- section2 -->
+<div data-aos="fade-up">
+
+ <section >
+    <div class="container py-5 ">
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-4 col-sm-6 col-12" *ngFor="let item of products | slice:0:24"data-aos="fade-up"
+          data-aos-duration="600"data-aos-easing="ease-in-out"
+          data-aos-delay="100">
+            <div class="card image-hover h-100 shadow-sm border-0">
+              <img [src]="item.imageUrl" class="card-img-top object-fit-cover" style="height: 200px;" alt="">
+              <div class="hover-text Cursor" (click)="single(item.itemName)" >
+                Select Option
+              </div>
+              <div class="card-body d-flex flex-column" (click)="getdata(item)">
+                <h5 class="card-title text-primary">{{ item.itemName }}</h5> 
+                <p class="card-text text-muted mb-2">{{ item.itemDescription }}</p>
+                <h6 class="mt-auto text-success">{{ item.itemPrice }} $ </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+ </section>
+</div>
+ <!-- end 2 -->
+
+
+ <!-- Section3 -->
+ <section class="overflow-hidden py-5" >
+  <div class="container-fluid p-0 py-0">
+    <div class="row mb-0 ">
+      <div class="col-12 ">
+        <img 
+          [src]="products[6]?.imageUrl" 
+          class="w-100 h-50  object-fit-cover" 
+          alt="صورة مطعم">
+      </div>
+    </div>
+  </div>
+</section>
+ <!-- end3 -->
+
+
+ <!--Section4   -->
+<section class="py-4 mt-custom-28">
+  <div class="container">
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <div
+          *ngFor="let item of products | slice:60:70; let i = index"
+          class="carousel-item"
+          [class.active]="i === 0"
+          [attr.data-bs-interval]="i === 0 ? 3000 : 2000"
+        >
+          <img
+            [src]="item.imageUrl"
+            class="d-block w-100 rounded-4 mx-auto"
+            style="max-height: 500px; object-fit: cover;"
+            alt="..."
+          />
+        </div>
+
+      </div>
+
+      <button class="carousel-control-prev custom-arrow" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+
+      <button class="carousel-control-next custom-arrow" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+
+    </div>
+  </div>
+</section>
+<!-- end4 -->
+
+
+</section>
+
+<!-- end Spinner -->
+
+ 

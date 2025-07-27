@@ -1,0 +1,36 @@
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="card shadow-lg p-4 rounded-4" style="width: 100%; max-width: 500px;">
+      <h3 class="text-center mb-4">Create Your Account</h3>
+      <form [formGroup]="form" (ngSubmit)="submit(form)">
+        
+        <div class="mb-3">
+          <label for="FirstName" class="form-label">First Name</label>
+          <input type="text" formControlName="first" class="form-control rounded-pill px-4" id="FirstName" placeholder="Enter your first name">
+        </div>
+  
+        <div class="mb-3">
+          <label for="LastName" class="form-label">Last Name</label>
+          <input type="text" formControlName="last"  class="form-control rounded-pill px-4" id="LastName" placeholder="Enter your last name">
+        </div>
+  
+        <div class="mb-3">
+          <label for="Email" class="form-label">Email address</label>
+          <input type="email" formControlName="email"  class="form-control rounded-pill px-4" id="Email" placeholder="Enter your email">
+          <div class="form-text mt-1">
+            <!-- (/^[a-zA-Z0-9._%+-]+ِ<a href=""></a>[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)    -->
+          </div>
+        </div>
+  
+        <div class="mb-3">
+          <label for="Password" class="form-label">Password</label>
+          <input type="password" formControlName="password"  class="form-control rounded-pill px-4" id="Password" placeholder="Choose a strong password">
+          <div class="form-text mt-1">
+            Must be 8-20 characters long and contain letters & numbers.
+          </div>
+        </div>
+  
+        <button type="submit" [disabled]="form.invalid"  class="btn btn-success w-100 rounded-pill py-2 mt-3">Sign Up</button>
+      </form>
+    </div>
+  </div>

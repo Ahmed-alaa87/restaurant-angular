@@ -1,0 +1,131 @@
+<div class="text-center" *ngIf="loading">
+  <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+ </div>
+
+
+<section *ngIf="!loading" class="shop-section py-5">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-md-6 d-flex flex-column justify-content-center ps-md-5">
+          <h4 class="display-4 fw-bold text-start text-primary">Contact</h4>
+          <p class="lead text-start text-muted mt-3">
+            The attractions of ceramics lie partly in its contradictions.
+            It is both difficult and easy, with an element beyond our control.
+            It is both extremely fragile and durable. Like 'Sumi' ink painting,
+            it does not lend itself to erasures and indecision.
+          </p>
+        </div>
+  
+        <div class="col-md-6 d-flex justify-content-center align-items-center mt-4 mt-md-0">
+          <div class="product-image-wrapper">
+            <img [src]="product[2]?.imageUrl" alt="صورة" class="img-fluid" style="max-width: 22rem;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section>
+    <h5 style="text-align: center;">Contact Us</h5>
+    <h2 style="text-align: center; font-size: 45px;">Lets get in touch</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <div class="grid d-flex">
+            <div class="g-col-4 me-3 bg">
+              <i class="fa-solid fa-location-dot p-3"></i>
+            </div>
+            <div class="g-col-4">
+              <h5>Address</h5>
+              <p>A108 Adam Street, New York, NY 535022</p>
+            </div>
+          </div>
+  
+          <div class="grid d-flex mt-3">
+            <div class="g-col-4 me-3 bg">
+              <i class="fa-solid fa-phone p-3"></i>
+            </div>
+            <div class="g-col-4">
+              <h5>Call Us</h5>
+              <p>+1 5589 55488 55</p>
+            </div>
+          </div>
+  
+          <div class="grid d-flex mt-3">
+            <div class="g-col-4 me-3 bg">
+              <i class="fa-solid fa-envelope p-3"></i>
+            </div>
+            <div class="g-col-4">
+              <h5>Email Us</h5>
+              <p>A108 Adam Street, New York, NY 535022</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-5" style="background-color: #f8f8f8;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="d-flex flex-wrap justify-content-center" style="max-width: 900px;">
+          <div style="width: 290px; height: 320px; background-color: rgb(188, 209, 226); margin-right: 40px;">
+            <h3 class="m-4">{{forms.name}}</h3>
+            <h4 class="m-3">{{forms.email}}</h4>
+            <p class="m-2">{{forms.massage}}</p>
+          </div>
+          <div [formGroup]="form" (ngSubmit)="form" class="col-md-6 col-sm-12 mt-4 mt-md-0">
+            <label for="">Name:</label>
+            <input type="text" class="form-control w-100" formControlName="name" placeholder="yourname">
+            <br>
+            <label for="">Email Address:</label>
+            <input type="email" class="form-control w-100" formControlName="email" placeholder="youremail">
+            <br>
+            <label for="">Message:</label>
+            <textarea class="form-control w-100" formControlName="massage" style="height: 130px;" placeholder="How Can Be Help"></textarea>
+            <br>
+            <button class="btn btn-danger w-50" (click)="data(form)" [disabled]="form.invalid">Send Message</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section style="height: auto; padding-bottom: 50px;">
+    <div>
+      <h1 style="text-align: center;">Elimy</h1>
+      <p style="text-align: center; margin-bottom: 100px;">
+        I have always striven to fix beauty in wood,stone, <br>
+        <b>glass or pottery, that has been my creed.</b>
+      </p>
+    </div>
+  
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-4 d-flex mb-4">
+          <div class="g-col-4 me-3 bg"><i class="fa-solid fa-location-dot p-3"></i></div>
+          <div class="g-col-8">
+            <h5>Address</h5>
+            <p>A108 Adam Street, New York, NY 535022</p>
+          </div>
+        </div>
+  
+        <div class="col-md-4 d-flex mb-4">
+          <div class="g-col-4 me-3 bg"><i class="fa-solid fa-phone p-3"></i></div>
+          <div class="g-col-8">
+            <h5>Call Us</h5>
+            <p>+1 5589 55488 55</p>
+          </div>
+        </div>
+  
+        <div class="col-md-4 d-flex mb-4">
+          <div class="g-col-4 me-3 bg"><i class="fa-solid fa-envelope p-3"></i></div>
+          <div class="g-col-8">
+            <h5>Email Us</h5>
+            <p>pompeopotery.gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

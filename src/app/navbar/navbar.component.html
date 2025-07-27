@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg bg-warning shadow-sm sticky-top">
+  <div class="container">
+    <!-- Logo / Brand -->
+    <a class="navbar-brand fs-3 fw-bold text-white bg-success px-3 py-1 rounded-3" routerLink="home">
+      🍔 Foods
+    </a>
+
+    <!-- Toggler for mobile -->
+    <button
+      class="navbar-toggler border-0"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navigation Links -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+      <ul class="navbar-nav gap-3 mt-4 mt-lg-0 align-items-center">
+
+        <!-- Links for logged in users -->
+        <li class="nav-item" *ngIf="login">
+          <a class="nav-link fw-bold text-dark" routerLink="home" routerLinkActive="text-success">Home</a>
+        </li>
+        <li class="nav-item" *ngIf="login">
+          <a class="nav-link fw-bold text-dark" routerLink="menu" routerLinkActive="text-success">Menu</a>
+        </li>
+        <li class="nav-item" *ngIf="login">
+          <a class="nav-link fw-bold text-dark" routerLink="about" routerLinkActive="text-success">About</a>
+        </li>
+        <li class="nav-item" *ngIf="login">
+          <a class="nav-link fw-bold text-dark" routerLink="contact" routerLinkActive="text-success">Contact</a>
+        </li>
+        <li class="nav-item" *ngIf="login">
+          <a class="nav-link fw-bold text-dark position-relative" routerLink="cart" routerLinkActive="text-success">
+            Cart
+            <i class="bi bi-cart-fill ms-1"></i>
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="login">
+          <a class="nav-link fw-bold text-danger" href="#" (click)="navigete()">Log Out</a>
+        </li>
+
+        <!-- Links for guests -->
+        <li class="nav-item" *ngIf="!login">
+          <a class="nav-link fw-bold text-dark" routerLink="register" routerLinkActive="text-success">Register</a>
+        </li>
+        <li class="nav-item" *ngIf="!login">
+          <a class="nav-link fw-bold text-dark" routerLink="login" routerLinkActive="text-success">Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

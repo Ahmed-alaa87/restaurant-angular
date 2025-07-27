@@ -1,0 +1,94 @@
+/* Section background */
+.shop-section {
+    background-color: #f8f9fa;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  .shop-section2 {
+    /* background-color: #f8f9fa; */
+    margin-left: 90px;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    margin-top: 100px;
+    width: 80%;
+    border-bottom: 1px dashed gray;
+  }
+  
+  /* Heading */
+  h4 {
+    font-size: 50px;
+    color: #333;
+  }
+  
+  /* Paragraph */
+  p {
+    font-size: 16px;
+    color: #666;
+  }
+
+  .edit{
+
+    width: 80%;
+    margin: 80px 90px;
+
+  }
+ 
+/* Styling for the product cards */
+.product-card {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Hover effect on the product card */
+  .product-card:hover {
+    transform: translateY(-5px); /* رفع العنصر قليلاً */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* إضافة تأثير الظل عند المرور */
+    background-color: #f7f7f7; /* تغيير لون الخلفية عند المرور */
+    border-bottom: 2px solid rgb(180, 234, 72);
+
+  }
+  
+  /* Effect for the image on hover */
+  .product-card img {
+    transition: transform 0.3s ease;
+  }
+  
+  .product-card:hover img {
+    transform: scale(1.1); /* تكبير الصورة عند المرور عليها */
+  }
+  
+  /* Info section inside each product card */
+  .product-info {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .product-info h4 {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .product-info h3 {
+    font-size: 1.1rem;
+    color: #ff6f61; /* تغيير اللون للسعر */
+    font-weight: 500;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 767px) {
+    .product-card {
+      margin-bottom: 15px;
+    }
+  
+    .product-info h4 {
+      font-size: 1rem;
+    }
+  
+    .product-info h3 {
+      font-size: 1rem;
+    }
+  }

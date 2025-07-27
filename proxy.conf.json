@@ -1,0 +1,10 @@
+
+{
+    "/api": {
+      "target": "https://fakerestaurantapi.runasp.net",
+      "secure": false,
+      "changeOrigin": true,
+      "logLevel": "debug"
+    }
+  }
+  
